@@ -1,7 +1,7 @@
 
 import pickle
 from pathlib import Path
-import nltk
+
 
 
 # Data processing
@@ -48,5 +48,4 @@ def predict_pipeline(text) :
     # Prédire la classe avec le modèle
     pred = model.predict([tmp])
 
-    return classes[pred[0]]
-    return classes[pred[0]]
+   
