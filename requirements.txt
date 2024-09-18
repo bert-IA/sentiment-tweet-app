@@ -4,7 +4,8 @@ pydantic==1.8.2
 streamlit==1.1.0
 altair
 scikit-learn==1.5.1
-#nltk==3.8.1
+spacy
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz
 scikit-learn
 altair
 requests==2.31.0  # Mise à jour de Requests
