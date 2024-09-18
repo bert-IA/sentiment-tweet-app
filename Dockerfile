@@ -3,6 +3,9 @@ FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9
 # Définir le répertoire de travail
 WORKDIR /app
 
+# Copier le reste de l'application
+COPY ./app /app/app
+
 # Copier les fichiers de dépendances
 COPY requirements.txt .
 
@@ -13,8 +16,7 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt
 # Télécharger le modèle de langue anglais de spacy
 RUN python -m spacy download en_core_web_sm
 
-# Copier le reste de l'application
-COPY ./app /app/app
+
 
 # Exposer le port sur lequel l'application va s'exécuter
 EXPOSE 8080
