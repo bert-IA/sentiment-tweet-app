@@ -2,6 +2,8 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from app.model.model import predict_pipeline
 from app.model.model import __version__ as model_version
+import uvicorn
+import os
 
 app = FastAPI()
 
@@ -14,6 +16,10 @@ class PredictionOut(BaseModel):
 @app.get("/")
 def home():
     return {"health_check": "ok", "model_version": model_version}
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))
+    uvicorn.run(app, host="0.0.0.0", port=port)
 
 @app.post("/predict", response_model=PredictionOut)
 def predict(payload: TextIn):
