@@ -1,0 +1,4 @@
+nltk==3.8.1
+scikit-learn==1.5.1
+pandas==2.2.2
+zipp==3.19.2
