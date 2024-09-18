@@ -5,7 +5,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 RUN python -m nltk.downloader wordnet
-RUN python -m nltk.downloader wordnet omw-1.4
+RUN python -m nltk.downloader omw-1.4
 
 COPY ./app /app/app
 
