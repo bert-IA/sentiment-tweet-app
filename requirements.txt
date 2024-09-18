@@ -4,7 +4,7 @@ pydantic==1.8.2
 streamlit==1.1.0
 altair
 scikit-learn==1.5.1
-nltk==3.8.1
+#nltk==3.8.1
 scikit-learn
 altair
 requests==2.31.0  # Mise à jour de Requests
