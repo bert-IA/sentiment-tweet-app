@@ -9,6 +9,9 @@ COPY requirements.txt .
 # Installer les dépendances
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
+# Forcer la réinstallation de numpy pour éviter les incompatibilités binaires
+RUN pip install --no-cache-dir --upgrade --force-reinstall numpy
+
 # Télécharger le modèle de langue anglais de spacy
 RUN python -m spacy download en_core_web_sm
 
