@@ -25,6 +25,7 @@ EXPOSE 8080
 # Définir les variables d'environnement
 ENV PORT=8080
 ENV HOST=0.0.0.0
+ENV NLTK_DATA=/usr/local/share/nltk_data
 
 # Commande pour démarrer l'application
 CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port $PORT"]
