@@ -10,11 +10,8 @@ warnings.filterwarnings('ignore')
 
 
 # Natural Language Processing (NLP)
-from nltk.stem import WordNetLemmatizer
-from nltk.tokenize import RegexpTokenizer, TweetTokenizer
-
-# Regular expressions
 import re
+from nltk.tokenize import TweetTokenizer
 
 __version__="0.1.0"
 BASE_DIR = Path(__file__).resolve(strict=True).parent
@@ -34,34 +31,22 @@ with open(f"{BASE_DIR}/freq5_list.pkl","rb") as freq :
 
 
 def predict_pipeline(text) :
-    tknz=TweetTokenizer(preserve_case=False,strip_handles=True, reduce_len=True)
-    tkn=RegexpTokenizer(r"\w+")
+    tknz = TweetTokenizer(preserve_case=False, strip_handles=True, reduce_len=True)
+    
+    # Convertir le texte en minuscules et supprimer les URLs
+    tmp = re.sub(r"https?://\S+|www\.\S+", "", text.lower())
 
-    tmp=text.lower()
-    # suppression des adresses mails
-    tmp = re.sub(r"https?\S+", "", tmp)
-    #suppresion des www.
-    tmp = re.sub(r"www.?\S+", "", tmp)
-    #suppresion des # et réduction des lettres répétées
-    tmp=(tknz.tokenize(tmp))
-    tmp =" ".join(tmp)
-    tmp = re.sub("[0-9]","", tmp) 
-    tmp=re.sub("[_-__-]"," ",tmp)
-    # retrait des ponctuations
-    tmp=tkn.tokenize(tmp)
-    #retrait d'autres caratères spéciaux
-    tmp =[char for char in list(tmp) if not (char in ponctuations)]
-    
-    tmp=[w for w in tmp if w not in freq_5]
-    
-    
-    lemmatizer = WordNetLemmatizer()
-    tmp=[lemmatizer.lemmatize(w) for w in tmp]
-        
-    tmp=[w for w in tmp if len(w)>1]
-    
-    tmp=" ".join(tmp)
+    # Tokeniser le texte
+    tokens = tknz.tokenize(tmp)
 
-    pred=model.predict([tmp])
-    
+    # Filtrer les tokens de longueur supérieure à 1
+    tokens = [w for w in tokens if len(w) > 1]
+
+    # Joindre les tokens en une seule chaîne
+    tmp = " ".join(tokens)
+
+    # Prédire la classe avec le modèle
+    pred = model.predict([tmp])
+
+    return classes[pred[0]]
     return classes[pred[0]]
