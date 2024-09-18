@@ -7,8 +7,6 @@ import os
 
 app = FastAPI()
 
-# Définir la version du modèle
-model_version = "0.1.0"
 
 class TextIn(BaseModel):
     text: str
