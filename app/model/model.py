@@ -1,8 +1,6 @@
 
 import pickle
 from pathlib import Path
-import tarfile
-
 
 
 # Data processing
@@ -17,9 +15,6 @@ import spacy
 __version__="0.1.0"
 BASE_DIR = Path(__file__).resolve(strict=True).parent
 
-def extract_tar(file_path, extract_path):
-    with tarfile.open(file_path, "r:gz") as tar:
-        tar.extractall(path=extract_path)
 
 with open(f"{BASE_DIR}/trained_pipeline-{__version__}.pkl","rb") as f :
     model = pickle.load(f)
