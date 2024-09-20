@@ -1,10 +1,9 @@
 # sentiment-tweet-app
 
 ## Description
-
-Ce projet déploie une application FastAPI sur Heroku pour l'analyse de sentiment des tweets. L'application utilise SpaCy pour le traitement du langage naturel et scikit-learn pour les prédictions. Une application Streamlit est également incluse pour une utilisation locale, permettant aux utilisateurs d'entrer un texte et de retourner le sentiment du texte (tweet).
-
-La société "AIr Paradis" souhaite gérer son image et pouvoir intervenir en cas de tweets négatifs trop nombreux. Ce projet permet de détecter les sentiments des tweets afin de prendre des mesures appropriées.
+La société "......." souhaite gérer son image et pouvoir intervenir en cas de tweets négatifs trop nombreux. Ce projet permet de détecter les sentiments des tweets afin de prendre des mesures appropriées.
+Ce projet déploie une application FastAPI sur Heroku pour l'analyse de sentiment des tweets. L'application utilise SpaCy pour le traitement du langage naturel et scikit-learn pour les prédictions. Une application Streamlit est également implémentée et permet à un utilisateur d'entrer un tweet et d'obtenir le sentiment prédit par le modèle via l'application FASTAPI déployé sur Heroku.
+Un modèle avec des métriques correctes bien que non optimales à été entrainé et enregistré pour permettre la prédiction des sentiments des twwets.
 
 ## Structure du projet
 
@@ -29,6 +28,8 @@ model_dep_hero_test/
 │   └── test_unitaire_app.py # Tests unitaires pour l'application
 └── README.md            # Documentation du projet
 ```
+
+
 
 ## Déploiement de l'application sur Heroku
 
