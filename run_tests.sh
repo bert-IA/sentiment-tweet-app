@@ -12,5 +12,5 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-echo "Tests passed. Proceeding with deployment."
+echo "Tests validés. Déployement écécuté."
 exec "$@"
