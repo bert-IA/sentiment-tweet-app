@@ -1,7 +1,7 @@
 # sentiment-tweet-app
 
 ## Description
-La société "......." souhaite gérer son image et pouvoir intervenir en cas de tweets négatifs trop nombreux. Ce projet permet de détecter les sentiments des tweets afin de prendre des mesures appropriées.
+La société "A..P....." souhaite gérer son image et pouvoir intervenir en cas de tweets négatifs trop nombreux. Ce projet permet de détecter les sentiments des tweets afin de prendre des mesures appropriées.
 
 Ce projet déploie une application FastAPI sur Heroku pour l'analyse de sentiment des tweets. L'application utilise SpaCy pour le traitement du langage naturel et scikit-learn pour les prédictions. Une application Streamlit est également implémentée et permet à un utilisateur d'entrer un tweet et d'obtenir le sentiment prédit par le modèle via l'application FASTAPI déployé sur Heroku.
 
