@@ -12,5 +12,3 @@ requests
 pandas
 gunicorn
 numpy
-scipy==1.9.0
-# commentaire à suprimer
