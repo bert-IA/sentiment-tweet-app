@@ -3,7 +3,7 @@
 ## Description
 La société "A..P....." souhaite gérer son image et pouvoir intervenir en cas de tweets négatifs trop nombreux. Ce projet permet de détecter les sentiments des tweets afin de prendre des mesures appropriées.
 
-Ce projet déploie une application FastAPI `main.py` sur Heroku pour l'analyse de sentiment des tweets. L'application utilise le fichier model.py pour analyser un tweet avec SpaCy pour le traitement du langage naturel et scikit-learn pour les prédictions. Une application Streamlit `app_test_heroku.py` est également implémentée et permet à un utilisateur en local d'entrer un tweet et d'obtenir le sentiment prédit par le modèle via l'application FASTAPI déployée. Une demande de validation de la prédiction est executée et les informations sont envoyées sous forme de log à une application Azure insights.
+Ce projet déploie une application FastAPI `main.py` sur Heroku pour l'analyse de sentiment des tweets. L'application utilise le fichier model.py pour analyser un tweet avec SpaCy pour le traitement du langage naturel et scikit-learn pour les prédictions. Une application Streamlit `app_test_heroku.py` est également implémentée et permet à un utilisateur en local d'entrer un tweet et d'obtenir le sentiment prédit par le modèle via l'application FASTAPI déployée. Une demande de validation de la prédiction est executée et les informations sont envoyées sous forme de log à une application Azure Insights.
 
 
 ## Structure du projet
@@ -51,7 +51,7 @@ streamlit run app_test_heroku.py
 
 L'application Streamlit est définie dans `app_test_heroku.py` et permet aux utilisateurs d'entrer un tweet et de connaître le sentiment du tweet prédit par le modèle : [`tweet_positif`] pour un client content et [`tweet_négatif`] pour un client mécontent.
 L'application demande ensuite à l'utilisateur si la prédiction est correcte ou non.
-Elle envoie alors un log à l'application Azure insights avec le tweet, le sentiment et un boolean de validation si la prédiction est valide ou non.  
+Elle envoie alors un log à l'application Azure insights avec le tweet, le sentiment et un booléen de validation si la prédiction est valide ou non.  
 
 **NB :** Une application Streamlit `apli.py` a été créée pour tester l'application FastAPI local.
 
@@ -65,7 +65,7 @@ Des tests unitaires ont été mis en place pour vérifier que l'application fonc
 - Un test de prédiction négative pour un tweet négatif.
 
 Les tests sont exécutés automatiquement avant le démarrage de l'application sur Heroku. Si les tests échouent, le déploiement est annulé.
-Ils sont gérés dans le script `run_tests.sh` qui via le package pytest execute le script dans `test_app.py`.
+Ils sont gérés dans le script `run_tests.sh` qui, via le package `pytest` exécute le script dans `test_app.py`.
 
 ### Configuration des alertes automatiques sur Azure 
 
