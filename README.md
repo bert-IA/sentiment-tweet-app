@@ -22,6 +22,7 @@ model_dep_hero_test/
 ├── Procfile             # Fichier de configuration pour Heroku
 ├── .dockerignore        # Fichiers et répertoires à ignorer par Docker
 ├── heroku.yml           # Fichier de configuration pour le déploiement sur Heroku
+├── apli_streamlit.py    # Application qui permet de prédire le sentiment d'un tweet
 ├── app_test_local.py    # Application Streamlit pour une utilisation locale
 ├── app_test_heroku.py   # Reçoit et envoie les donées des tweets à l'application insigths
 ├── Dockerfile           # Fichier de configuration pour Docker
