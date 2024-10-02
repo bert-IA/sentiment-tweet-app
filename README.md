@@ -69,8 +69,7 @@ Ils sont gérés dans le script `run_tests.sh` qui, via le package `pytest` exé
 
 ### Configuration des alertes automatiques sur Azure 
 
-Une alerte a été mise en place par l'envoi d'un mail au développeur de l'application en cas de trois tweets négatifs dans un intervalle de 5 minutes.
-```
+Une alerte via le portail Azure et Application Insights a été mise en place par l'envoi d'un mail en cas de trois tweets négatifs dans un intervalle de 5 minutes.
 
 
 
