@@ -52,9 +52,9 @@ streamlit run app_test_heroku.py
 
 L'application Streamlit est définie dans `app_test_heroku.py` et permet aux utilisateurs d'entrer un tweet et de connaître le sentiment du tweet prédit par le modèle : [`tweet_positif`] pour un client content et [`tweet_négatif`] pour un client mécontent.
 L'application demande ensuite à l'utilisateur si la prédiction est correcte ou non.
-Elle envoie alors un log à l'application Azure insights avec le tweet, le sentiment et un booléen de validation si la prédiction est valide ou non.  
+Elle envoie alors une trace à l'application Azure insights contenant le tweet, le sentiment et un booléen de validation si la prédiction est valide ou non.  
 
-**NB :** Une application Streamlit `apli.py` a été créée pour tester l'application FastAPI local.
+**NB :** Une application Streamlit `app_test_local.py` a été créée pour tester l'application FastAPI local.
 
 ## Tests et alertes 
 ### Précisions sur les tests unitaires avant le déploiement
